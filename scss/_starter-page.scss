@@ -1,0 +1,20 @@
+.starter-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.main-logo {
+    width: 100px;
+    margin-bottom: 100px;
+    
+}
+
+#logo {
+    zoom: 3000%;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%)
+}

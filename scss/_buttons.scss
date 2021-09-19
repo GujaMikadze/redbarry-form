@@ -1,0 +1,40 @@
+.btn {
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+
+  &__start {
+    width: 280px;
+    background-color: #eaeaea;
+
+    &:hover {
+      background-image: url(../images/background.png);
+      background-repeat: no-repeat;
+      background-position-x: 48px;
+    }
+  }
+
+  &__submit {
+    font-family: FontCaps, sans-serif;
+    font-size: 18px;
+    height: 56px;
+    width: 180px;
+    color: #fff;
+    background-color: #208298;
+    border-radius: 42px;
+    margin-right: 106px;
+  }
+}
+
+#right-arrow:disabled,
+#right-arrow-two:disabled,
+#right-arrow-three:disabled,
+#submit-form:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#left-arrow-three {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}

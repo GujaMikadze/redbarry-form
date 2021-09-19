@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="images/site.webmanifest">
+        <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.3/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.3/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.3/dist/js/uikit-icons.min.js"></script>
+
+    <!-- My CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Anonymous Pro-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@700&display=swap" rel="stylesheet">
+    <title>Redbarry</title>
+</head>
+<body>
+    <div class="container">
+        <div class="starter-page">
+            <img src="images/main-logo.png" class="main-logo uk-position-absolute" alt="Main Logo" id="logo">
+            <button class="btn btn__start uk-hidden">
+                <img src="images/კითხვარის დაწყება.png" alt="კითხვარის დაწყება">
+            </button>
+        </div>
+    </div>
+    <div class="uk-hidden">
+        <div class="first-page">
+            <div class="page-header">
+                <div class="uk-flex uk-flex-between uk-flex-middle">
+                    <img src="images/redbarry-text.png" alt="Redbarry">
+                    <p class="page-number">
+                        <span class="active-page">1</span>/4
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div class="uk-child-width-1-2" uk-grid>
+                    <div class="main-left uk-flex uk-flex-column">
+                        <form action="form/action_page.php" class="uk-flex uk-flex-column" name="myform" id="myform">
+                            <div class="myform-part__one uk-flex uk-flex-column">
+                                <label for="fname" class="hide-first">სახელი*</label>
+                                <input type="text" id="fname" name="fname" class="first-page__input hide-first" required placeholder="სახელი" min-length="3" max-length="255" pattern="[A-Za-zა-ჰ]+">
+                                <div class="uk-position-relative hide-first">
+                                    <span class="uk-hidden uk-position-absolute first-page__input-invalid min-3">
+                                        სახელის ველი უნდა შედგებოდეს მინიმუმ 3 სიმბოლოსგან
+                                    </span>
+                                    <span class="uk-hidden uk-position-absolute first-page__input-invalid max-255">
+                                        სახელის ველი უნდა შედგებოდეს მაქსიმუმ 255 სიმბოლოსგან
+                                    </span>
+                                    <span class="uk-hidden uk-position-absolute first-page__input-invalid only-az">
+                                        სახელის ველი უნდა შეიცავდეს მხოლოდ ანბანის ასოებს
+                                    </span>
+                                </div>
+                                <label for="lname" class="hide-first">გვარი*</label>
+                                <input type="text" id="lname" name="lname" class="first-page__input hide-first" required placeholder="გვარი" min-length="3" max-length="255" pattern="[A-Za-zა-ჰ]+">
+                                <div class="uk-position-relative hide-first">
+                                    <span class="uk-hidden uk-position-absolute first-page__input-invalid min-3lname">
+                                        გვარის ველი უნდა შედგებოდეს მინიმუმ 3 სიმბოლოსგან
+                                    </span>
+                                    <span class="uk-hidden uk-position-absolute first-page__input-invalid max-255lname">
+                                        გვარის ველი უნდა შედგებოდეს მაქსიმუმ 255 სიმბოლოსგან
+                                    </span>
+                                    <span class="uk-hidden uk-position-absolute first-page__input-invalid only-azlname">
+                                        გვარის ველი უნდა შეიცავდეს მხოლოდ ანბანის ასოებს
+                                    </span>
+                                </div>
+                                <label for="email" class="hide-first">მეილი*</label>
+                                <input type="email" name="email" id="email" class="first-page__input hide-first" required placeholder="მეილი" pattern="[a-z0-9._%+-]+@redberry.ge">
+                                <div class="uk-position-relative hide-first">
+                                    <span class="uk-hidden uk-position-absolute first-page__input-invalid email-invalid">
+                                        თქვენ მიერ შეყვანილი მეილი არასწორია
+                                    </span>
+                                    <span class="uk-hidden uk-position-absolute first-page__input-invalid email-invalidtwo">
+                                        გთხოვთ დარეგისტრირდეთ Redberry-ს მეილით (youremail@redberry.ge)
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="myform-part__two uk-flex uk-flex-column">
+                                <div class="uk-hidden visible-first" id="question-one">
+                                    <p class="radio-question">გაქვს გადატანილი Covid-19?*</p>
+                                    <div>
+                                            <input type="radio" id="yes" name="check-for-covid" value="yes">
+                                            <label for="yes">კი</label>
+                                    </div>
+                                    <div>
+                                            <input type="radio" id="no" name="check-for-covid" value="no">
+                                            <label for="no">არა</label>
+                                    </div>
+                                    <div>
+                                            <input type="radio" id="positive" name="check-for-covid" value="positive">
+                                            <label for="positive">ახლა მაქვს</label>
+                                    </div>
+                                </div>
+                                <div class="covidanswer-is-yes uk-margin-medium-top uk-hidden">
+                                    <p class="radio-question radio-question__yes">ანტისხეულების ტესტი გაქვს გაკეთებული?*</p>
+                                    <div>
+                                            <input type="radio" id="yes-anti" name="check-for-anti" value="yes">
+                                            <label for="yes-anti">კი</label>
+                                    </div>
+                                    <div>
+                                            <input type="radio" id="no-anti" name="check-for-anti" value="no">
+                                            <label for="no-anti">არა</label>
+                                    </div>
+                                </div>
+                                <div class="antianswer-is-yes uk-margin-medium-top uk-hidden">
+                                    <p class="radio-question radio-question__yes-yes">თუ გახსოვს, გთხოვ მიუთითე ტესტის მიახლოებითი რიცხვი და ანტისხეულების რაოდენობა*</p>
+                                    <input type="date" id="date-anti" name="date-anti" class="first-page__input" placeholder="რიცხვი"><br>
+                                    <input type="number" name="anti-quantity" id="anti-quantity" class="first-page__input" placeholder="ანტისხეულების რაოდენობა">
+                                </div>
+                                <div class="radio-question antianswer-is-no uk-margin-medium-top uk-hidden">
+                                    <p class="radio-question__yes-no">მიუთითე მიახლოებითი პერიოდი (დღე/თვე/წელი) როდის გქონდა Covid-19*</p>
+                                    <input type="date" name="date-covid" id="date-covid" class="first-page__input" placeholder="დდ/თთ/წწ">
+                                </div>
+                            </div>
+                            <div class="myform-part__three">
+                                <div class="visible-two uk-hidden">
+                                    <p class="radio-question">უკვე აცრილი ხარ?*</p>
+                                    <div>
+                                            <input type="radio" id="yes-vaccine" name="check-for-covid" value="yes">
+                                            <label for="yes-vaccine">კი</label>
+                                    </div>
+                                    <div>
+                                            <input type="radio" id="no-vaccine" name="check-for-covid" value="no">
+                                            <label for="no-vaccine">არა</label>
+                                    </div>
+                                </div>
+                                <div class="vacinated uk-margin-medium-top uk-hidden">
+                                    <p class="radio-question">აირჩიე რა ეტაპზე ხარ*</p>
+                                    <div>
+                                        <input type="radio" id="half-vaccinated-registered" name="stage-covid" value="half-vacinated-registered">
+                                        <label for="half-vaccinated-registered">პირველი დოზა და დარეგისტრირებული ვარ მეორეზე</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="vaccinated" name="stage-covid" value="vaccinated">
+                                        <label for="vaccinated">სრულად აცრილი ვარ</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="half-vacinated-not-registered" name="stage-covid" value="half-vacinated-not-registered">
+                                        <label for="half-vacinated-not-registered">პირველი დოზა და არ ვარ დარეგისტრირებული მეორეზე</label>
+                                    <div class="register-now uk-hidden">
+                                        <p class="register-link">
+                                            რომ არ გადადო,<br>
+                                            ბარემ ახლავე დარეგისტრირდი
+                                            <a href="https://booking.moh.gov.ge/">
+                                                https://booking.moh.gov.ge/
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                                <div class="not-vacinated uk-margin-medium-top uk-hidden">
+                                    <p class="radio-question">რას ელოდები?*</p>
+                                    <div>
+                                        <input type="radio" id="waiting-for-date" name="waiting" value="waiting-for-date">
+                                        <label for="waiting-for-date">დარეგისტრირებული ვარ და ველოდები რიცხვს</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="not-wanted" name="waiting" value="not-wanted">
+                                        <label for="not-wanted">არ ვგეგმავ</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="planning" name="waiting" value="planning">
+                                        <label for="planning">გადატანილი მაქვს და ვგეგმავ აცრას</label>
+                                    </div>
+                                <div class="negative-answer uk-hidden">
+                                    <p class="register-link">
+                                        👉 <a href="https://booking.moh.gov.ge/">
+                                            https://booking.moh.gov.ge/
+                                        </a>
+                                    </p>
+                                </div>
+                                <div class="if-planning uk-hidden">
+                                    <p class="register-link">
+                                        ახალი პროტოკოლით კოვიდის გადატანიდან 1 თვის შემდეგ შეგიძლიათ ვაქცინის გაკეთება.<br>  
+                                        👉 რეგისტრაციის ბმული
+                                        <a href="https://booking.moh.gov.ge/">
+                                            https://booking.moh.gov.ge/
+                                        </a>
+                                    </p>
+                                </div>
+                                    
+                                  
+
+                            </div>
+                            </div>
+                            <div class="myform-part__four uk-hidden">
+                                <p class="myform-part__four-text">
+                                    რედბერის მთავარი ღირებულება ჩვენი გუნდის თითოეული წევრია. გარემო, რომელსაც ჩვენი
+                                    თანამშრომლები ქმნით, ბევრისთვის არის და ყოფილა წლების განმავლობაში მიზნებისთვის ერთად ბრძოლის მიზეზი, ბევრისთვის კი — ჩვენთან გადმოსვლის. 
+                                    პანდემიის პერიოდში ერთმანეთსაც იშვიათად ვნახულობთ პირისპირ და ყოველდღიური კომუნიკაციაც გაიშვიათდა.
+                                </p>
+                                <div class="lastpage-question__one">
+                                    <p class="radio-question">რა სიხშირით შეიძლება გვქონდეს საერთო არაფორმალური ონლაინ შეხვედრები, სადაც ყველა სურვილისამებრ ჩაერთვება?*</p>
+                                    <div>
+                                            <input type="radio" id="twice-week" name="meeting" value="twice-week">
+                                            <label for="twice-week">კვირაში ორჯერ</label>
+                                    </div>
+                                    <div>
+                                            <input type="radio" id="once-week" name="meeting" value="once-week">
+                                            <label for="once-week">კვირაში ერთხელ</label>
+                                    </div>
+                                    <div>
+                                            <input type="radio" id="once-two-week" name="meeting" value="once-two-week">
+                                            <label for="once-two-week">ორ კვირაში ერთხელ</label>
+                                    </div>
+                                    <div>
+                                            <input type="radio" id="once-month" name="meeting" value="once-month">
+                                            <label for="once-month">თვეში ერთხელ</label>
+                                    </div>
+                                </div>
+                                <div class="lastpage-question__two">
+                                    <p class="radio-question">კვირაში რამდენი დღე ისურვებდი ოფისიდან მუშაობას?*</p>
+                                    <div>
+                                            <input type="radio" id="none" name="from-office" value="none">
+                                            <label for="none">0</label>
+                                    </div>
+                                    <div>
+                                            <input type="radio" id="once" name="from-office" value="once">
+                                            <label for="once">1</label>
+                                    </div>
+                                    <div>
+                                            <input type="radio" id="twice" name="from-office" value="twice">
+                                            <label for="twice">2</label>
+                                    </div>
+                                    <div>
+                                            <input type="radio" id="three-times" name="from-office" value="three-times">
+                                            <label for="three-times">3</label>
+                                    </div>
+                                    <div>
+                                            <input type="radio" id="four-times" name="from-office" value="four-times">
+                                            <label for="four-times">4</label>
+                                    </div>
+                                    <div>
+                                            <input type="radio" id="five-times" name="from-office" value="five-times">
+                                            <label for="five-times">5</label>
+                                    </div>
+                                </div>
+                                <div class="lastpage-question__textarea">
+                                    <label for="textarea-question-one">რას ფიქრობ ფიზიკურ შეკრებებზე?</label><br>
+                                    <textarea name="textarea-question-one" id="first-textarea" cols="80" rows="10"></textarea><br>
+                                    <label for="textarea-question-two">რას ფიქრობ არსებულ გარემოზე:რა მოგწონს, რას დაამატებდი, რას შეცვლიდი?</label><br>
+                                    <textarea name="textarea-question-two" id="second-textarea" cols="80" rows="10"></textarea>
+                                </div>
+                                <div class="uk-flex uk-flex-right uk-margin-medium-right">
+                                    <button type="submit" form="myform" value="submit" class="btn btn__submit" id="submit-form" disabled>დასრულება</button>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="form-rule uk-position-relative hide-first">
+                            *-ით მონიშნული ველების შევსება სავალდებულოა
+                        </div>
+                    </div>
+                    <div class="page-image">
+                        <img src="images/img1.png" alt="Two Person With Star Eyes" class="img-first">
+                        <img src="images/img2.png" alt="person With fever" class="uk-hidden img-second">
+                        <img src="images/img3.png" alt="Doctror" class="uk-hidden img-third">
+                        <img src="images/img4.png" alt="office" class="uk-hidden img-fourth">
+                    </div>
+                </div>
+            </div>
+            <div class="arrows uk-flex uk-flex-around">
+                <button  class="uk-hidden btn" id="left-arrow">
+                    <img src="images/arrow-left.svg" alt="left arrow">
+                </button>
+                <button  class="uk-hidden btn" id="left-arrow-two">
+                    <img src="images/arrow-left.svg" alt="left arrow">
+                </button>
+                <button  class="uk-hidden btn" id="left-arrow-three">
+                    <img src="images/arrow-left.svg" alt="left arrow">
+                </button>
+                <button  id="right-arrow" class="btn right-arrow" disabled>
+                    <img src="images/arrow-right.svg" alt="right arrow">
+                </button>
+                <button  id="right-arrow-two" class="btn right-arrow uk-hidden" disabled>
+                    <img src="images/arrow-right.svg" alt="right arrow">
+                </button>
+                <button  id="right-arrow-three" class="btn right-arrow uk-hidden" disabled>
+                    <img src="images/arrow-right.svg" alt="right arrow">
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="uk-hidden">
+        <div class="thank-you uk-flex uk-flex-center uk-flex-middle">
+            <img src="images/thanks.png" alt="thank you">
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="main.js"></script>
+</html>
